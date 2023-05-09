@@ -66,7 +66,7 @@ export default function Main() {
                 </a>
               </li>
             </ul>
-          </li>
+          </li> 
         </div>
       ) : (
         ""
