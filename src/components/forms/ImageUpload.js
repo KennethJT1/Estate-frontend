@@ -32,7 +32,7 @@ export default function ImageUpload({ ad, setAd }) {
                     uploading: false,
                   }));
                 } catch (err) {
-                  console.log(err);
+                  console.log("from here",err);
                   setAd({ ...ad, uploading: false });
                 }
               },

@@ -39,8 +39,6 @@ export default function AdForm({ action, type }) {
         toast.error(data.error);
         setAd({ ...ad, loading: false });
       } else {
-        // data {user, ad}
-
         // update user in context
         setAuth({ ...auth, user: data.user });
         // update user in local storage
@@ -149,8 +147,6 @@ export default function AdForm({ action, type }) {
       >
         {ad.loading ? "Saving..." : "Submit"}
       </button>
-
-      {/* <pre>{JSON.stringify(ad, null, 4)}</pre> */}
     </>
   );
 }
