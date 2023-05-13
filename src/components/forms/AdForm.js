@@ -4,7 +4,6 @@ import { GOOGLE_PLACES_KEY } from "../../config";
 import CurrencyInput from "react-currency-input-field";
 import ImageUpload from "./ImageUpload";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useAuth } from "../../context/auth";
 
@@ -28,7 +27,6 @@ export default function AdForm({ action, type }) {
     action,
   });
   // hooks
-  const navigate = useNavigate();
 
   const handleClick = async () => {
     try {
@@ -48,7 +46,6 @@ export default function AdForm({ action, type }) {
 
         toast.success("Ad created successfully");
         setAd({ ...ad, loading: false });
-        // navigate("/dashboard");
 
         // reload page on redirect
         window.location.href = "/dashboard";
