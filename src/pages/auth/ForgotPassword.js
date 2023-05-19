@@ -5,16 +5,13 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 export default function Login() {
-  // state
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
-  // hooks
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // console.log(email, password);
       setLoading(true);
       const { data } = await axios.post(`/forgot-password`, {
         email,

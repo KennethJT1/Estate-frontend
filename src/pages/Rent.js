@@ -4,10 +4,10 @@ import axios from "axios";
 import AdCard from "../components/cards/AdCard";
 import SearchForm from "../components/forms/SearchForm";
 
-export default function Home() {
+export default function Rent() {
   const [auth, setAuth] = useAuth();
-  const [adsForSell, setAdsForSell] = useState();
-  const [adsForRent, setAdsForRent] = useState();
+
+  const [ads, setAds] = useState([]);
 
   useEffect(() => {
     fetchAds();
@@ -15,9 +15,8 @@ export default function Home() {
 
   const fetchAds = async () => {
     try {
-      const { data } = await axios.get("/ads");
-      setAdsForSell(data.adsForSell);
-      setAdsForRent(data.adsForRent);
+      const { data } = await axios.get("/ads-for-rent");
+      setAds(data);
     } catch (err) {
       console.log(err);
     }
@@ -26,19 +25,10 @@ export default function Home() {
   return (
     <div>
       <SearchForm />
-      <h1 className="display-1 bg-primary text-light p-5">For Sell</h1>
-      <div className="container">
-        <div className="row">
-          {adsForSell?.map((ad) => (
-            <AdCard ad={ad} key={ad._id} />
-          ))}
-        </div>
-      </div>
-
       <h1 className="display-1 bg-primary text-light p-5">For Rent</h1>
       <div className="container">
         <div className="row">
-          {adsForRent?.map((ad) => (
+          {ads?.map((ad) => (
             <AdCard ad={ad} key={ad._id} />
           ))}
         </div>

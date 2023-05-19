@@ -17,10 +17,8 @@ import relativeTime from "dayjs/plugin/relativeTime";
 dayjs.extend(relativeTime);
 
 export default function AdView() {
-  // state
   const [ad, setAd] = useState({});
   const [related, setRelated] = useState([]);
-  // hooks
   const params = useParams();
 
   useEffect(() => {

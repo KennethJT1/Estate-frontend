@@ -5,9 +5,7 @@ import axios from "axios";
 import AdCard from "../../components/cards/AdCard";
 
 export default function Enquiries() {
-  // context
   const [auth, setAuth] = useAuth();
-  // state
   const [ads, setAds] = useState([]);
   const [loading, setLoading] = useState(false);
 

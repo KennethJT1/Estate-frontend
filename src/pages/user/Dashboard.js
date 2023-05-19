@@ -5,9 +5,7 @@ import axios from "axios";
 import UserAdCard from "../../components/cards/UserAdCard";
 
 export default function Dashboard() {
-  // context
   const [auth, setAuth] = useAuth();
-  // state
   const [ads, setAds] = useState([]);
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
@@ -27,7 +25,6 @@ export default function Dashboard() {
   const fetchAds = async () => {
     try {
       const { data } = await axios.get(`/user-ads/${page}`);
-      // setAds(data.ads);
       setAds([...ads, ...data.ads]);
       setTotal(data.total);
     } catch (err) {

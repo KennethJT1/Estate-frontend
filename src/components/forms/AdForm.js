@@ -8,9 +8,8 @@ import toast from "react-hot-toast";
 import { useAuth } from "../../context/auth";
 
 export default function AdForm({ action, type }) {
-  // context
   const [auth, setAuth] = useAuth();
-  // state
+
   const [ad, setAd] = useState({
     photos: [],
     uploading: false,
@@ -26,7 +25,6 @@ export default function AdForm({ action, type }) {
     type,
     action,
   });
-  // hooks
 
   const handleClick = async () => {
     try {

@@ -5,9 +5,7 @@ import axios from "axios";
 import { useAuth } from "../../context/auth";
 
 export default function AccessAccount() {
-  // context
   const [auth, setAuth] = useAuth();
-  // hooks
   const { token } = useParams();
   const navigate = useNavigate();
 
@@ -23,9 +21,7 @@ export default function AccessAccount() {
       if (data?.error) {
         toast.error(data.error);
       } else {
-        // save in local storage
         localStorage.setItem("auth", JSON.stringify(data));
-        // save in context
         setAuth(data);
         toast.success("Please update your password in profile page");
         navigate("/");

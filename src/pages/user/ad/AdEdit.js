@@ -9,7 +9,6 @@ import toast from "react-hot-toast";
 import Sidebar from "../../../components/nav/Sidebar";
 
 export default function AdEdit({ action, type }) {
-  // state
   const [ad, setAd] = useState({
     _id: "",
     photos: [],
@@ -28,7 +27,6 @@ export default function AdEdit({ action, type }) {
   });
   const [loaded, setLoaded] = useState(false);
 
-  // hooks
   const navigate = useNavigate();
   const params = useParams();
 
@@ -41,7 +39,6 @@ export default function AdEdit({ action, type }) {
   const fetchAd = async () => {
     try {
       const { data } = await axios.get(`/ad/${params.slug}`);
-      //   console.log("single ad edit page => ", data);
       setAd(data?.ad);
       setLoaded(true);
     } catch (err) {
@@ -66,7 +63,6 @@ export default function AdEdit({ action, type }) {
         setAd({ ...ad, loading: true });
 
         const { data } = await axios.put(`/ad/${ad._id}`, ad);
-        // console.log("ad create response => ", data);
         if (data?.error) {
           toast.error(data.error);
           setAd({ ...ad, loading: false });
@@ -87,7 +83,6 @@ export default function AdEdit({ action, type }) {
       setAd({ ...ad, loading: true });
 
       const { data } = await axios.delete(`/ad/${ad._id}`);
-      // console.log("ad create response => ", data);
       if (data?.error) {
         toast.error(data.error);
         setAd({ ...ad, loading: false });
@@ -211,8 +206,6 @@ export default function AdEdit({ action, type }) {
             {ad.loading ? "Deleting..." : "Delete"}
           </button>
         </div>
-
-        {/* <pre>{JSON.stringify(ad, null, 4)}</pre> */}
       </div>
     </div>
   );

@@ -5,13 +5,11 @@ import UserCard from "../components/cards/UserCard";
 import AdCard from "../components/cards/AdCard";
 
 export default function Agent() {
-  // state
   const [agent, setAgent] = useState(null);
   const [ads, setAds] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const params = useParams();
-  //   console.log(params.username);
 
   useEffect(() => {
     if (params?.username) fetchAgent();

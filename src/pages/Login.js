@@ -5,13 +5,12 @@ import { useAuth } from "../context/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export default function Login() {
-  // context
   const [auth, setAuth] = useAuth();
-  // state
-  const [email, setEmail] = useState("Walexeniola081@gmail.com");
-  const [password, setPassword] = useState("1234");
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  // hooks
+
   const navigate = useNavigate();
   const location = useLocation();
 

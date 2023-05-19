@@ -4,7 +4,6 @@ import toast from "react-hot-toast";
 import Sidebar from "../../components/nav/Sidebar";
 
 export default function Settings() {
-  // state
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 

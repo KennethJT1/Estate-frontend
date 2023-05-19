@@ -8,9 +8,8 @@ import Sidebar from "../../components/nav/Sidebar";
 import ProfileUpload from "../../components/forms/ProfileUpload";
 
 export default function Profile() {
-  // context
   const [auth, setAuth] = useAuth();
-  // state
+  
   const [username, setUsername] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -61,6 +60,7 @@ export default function Profile() {
         localStorage.setItem("auth", JSON.stringify(fromLS));
         setLoading(false);
         toast.success("Profile updated");
+        navigate("/dashboard");
       }
     } catch (err) {
       console.log(err);

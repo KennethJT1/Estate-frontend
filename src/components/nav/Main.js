@@ -3,9 +3,7 @@ import { useAuth } from "../../context/auth";
 import { useNavigate } from "react-router-dom";
 
 export default function Main() {
-  // context
   const [auth, setAuth] = useAuth();
-  // hooks
   const navigate = useNavigate();
 
   const logout = () => {

@@ -8,7 +8,6 @@ export default function ImageUpload({ ad, setAd }) {
       let files = e.target.files;
       files = [...files];
       if (files?.length) {
-        // console.log(files);
         setAd({ ...ad, uploading: true });
 
         files.map((file) => {
@@ -22,7 +21,6 @@ export default function ImageUpload({ ad, setAd }) {
               0,
               async (uri) => {
                 try {
-                  // console.log("UPLOAD URI => ", uri);
                   const { data } = await axios.post("/upload-image", {
                     image: uri,
                   });

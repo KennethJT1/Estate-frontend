@@ -5,9 +5,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 export default function LikeUnlike({ ad }) {
-  // context
   const [auth, setAuth] = useAuth();
-  // hooks
   const navigate = useNavigate();
 
   const handleLike = async () => {

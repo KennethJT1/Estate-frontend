@@ -3,7 +3,6 @@ import axios from "axios";
 import UserCard from "../components/cards/UserCard";
 
 export default function Agents() {
-  // state
   const [agents, setAgents] = useState();
   const [loading, setLoading] = useState(true);
 

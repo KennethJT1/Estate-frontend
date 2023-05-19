@@ -9,7 +9,6 @@ export default function ProfileUpload({
   uploading,
   setUploading,
 }) {
-  // context
   const [auth, setAuth] = useAuth();
 
   const handleUpload = async (e) => {
@@ -17,7 +16,6 @@ export default function ProfileUpload({
       let file = e.target.files[0];
 
       if (file) {
-        // console.log(files);
         setUploading(true);
 
         new Promise(() => {
@@ -30,7 +28,6 @@ export default function ProfileUpload({
             0,
             async (uri) => {
               try {
-                // console.log("UPLOAD URI => ", uri);
                 const { data } = await axios.post("/upload-image", {
                   image: uri,
                 });
