@@ -1,6 +1,7 @@
 import { useState, createContext, useContext, useEffect } from "react";
 import axios from "axios";
 import { API } from "../config";
+console.log("data==>", API)
 
 const AuthContext = createContext();
 
